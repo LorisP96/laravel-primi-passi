@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+
+    $data = [
+        'name' => 'Loris',
+        'lastname' => 'Palazzo',
+    ];
+
+    return view('home', $data);
+})->name('home');
+
+Route::get('/cities', function () {
+
+    $data = [
+        'cities' => ['Roma', 'Bologna', 'Ascoli'],
+    ];
+
+    return view('cities', $data);
+})->name('cities');
